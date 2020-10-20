@@ -1,5 +1,8 @@
 package com.example.referenciasapa_app
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,9 +16,16 @@ class ReferenciaLibroActivity : AppCompatActivity() {
     }
 
     fun OnGenerarRerencia(view: View) {
-        if(inputEditorial.text.toString().length== 0){
+
+        //Validación simple
+
+        if(inputEditorial.text.toString().length == 0){
             Toast.makeText(this, "Por favor ingrese la editorial", Toast.LENGTH_LONG).show()
             return
+        }
+
+        if(inputTitulo.text.toString().length == 0){
+
         }
 
         if(inputAutores.text.toString().length == 0){
@@ -31,12 +41,40 @@ class ReferenciaLibroActivity : AppCompatActivity() {
             return
         }
 
-        btnCopiarReferenciaLibro.isEnabled = true
+
+        // End validación, si validación correcta, se genera la referencia
+
+        var referenciaCreada : String = ""
+
+        try {
+            referenciaCreada += "${inputAutores.text.toString()}. (${inputAnioPublicacion.text.toString()}). ${inputTitulo.text.toString()}. Lugar: ${inputLugarPublicacion.text.toString()}. ${inputEditorial.text.toString()}"
+            inputReferenciaCreadaLibro.setText(referenciaCreada)
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
+
+        if(referenciaCreada.length > 0){
+            Toast.makeText(this, "Referencia creada", Toast.LENGTH_LONG).show()
+            btnCopiarReferenciaLibro.isEnabled = true
+        }else{
+            Toast.makeText(this, "Ocurrió un error al crear la referencia", Toast.LENGTH_LONG).show()
+        }
+
 
     }
 
 
     fun OnCopiarReferencia(view : View){
-        Toast.makeText(this, "Funciono", Toast.LENGTH_LONG).show()
+
+
+
+        var txtToCopy = inputReferenciaCreadaLibro.text.toString()
+
+        val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clipData = ClipData.newPlainText("text", txtToCopy)
+        clipboardManager.setPrimaryClip(clipData)
+
+
+        Toast.makeText(this, "Texto copiado", Toast.LENGTH_LONG).show()
     }
 }
