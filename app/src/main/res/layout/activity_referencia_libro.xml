@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ReferenciaLibroActivity">
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/book">
+
+    </ImageView>
+
+    <TextView
+
+        android:id="@+id/tvIntruccion"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:gravity="center"
+        android:text="Ingrese los datos"
+        android:textAlignment="gravity"
+        android:textColor="@color/textColor"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="vertical"
+        android:textAlignment="center"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/inputEditorial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:textStyle="bold"
+            android:outlineSpotShadowColor="@color/placeHolderColor"
+            android:textColor="@color/placeHolderColor"
+            android:maxLines="1"
+            android:maxLength="30"
+            android:hint="Editorial">
+        </EditText>
+
+        <EditText
+            android:id="@+id/inputAutores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:textStyle="bold"
+            android:textColor="@color/placeHolderColor"
+            android:maxLength="30"
+            android:hint="Autor o autores">
+        </EditText>
+
+        <EditText
+            android:id="@+id/inputAnioPublicacion"
+            android:numeric="integer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:textStyle="bold"
+            android:textColor="@color/placeHolderColor"
+            android:maxLength="4"
+            android:hint="Año de publicación">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/inputLugarPublicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:textStyle="bold"
+            android:textColor="@color/placeHolderColor"
+            android:maxLength="30"
+            android:hint="Lugar de publicación"
+            android:autofillHints="Hola como estás">
+        </EditText>
+
+
+        <Button
+            android:id="@+id/btnGenerarLibro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Generar"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:shadowRadius="2"
+            android:shadowColor="@color/textColor"
+            android:background="@color/buttonBackground"
+            android:layout_margin="10dp"
+            android:onClick="OnGenerarRerencia"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top">
+
+        <TextView
+            android:id="@+id/inputReferenciaCreadaLibro"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:layout_margin="10dp"
+            android:background="@color/fondoInputFichaGenerada"
+            android:enabled="true"
+            android:gravity="center"
+            android:text=""
+            android:textAlignment="gravity"
+            android:textStyle="italic"></TextView>
+
+        <Button
+            android:id="@+id/btnCopiarReferenciaLibro"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="30dp"
+            android:layout_weight="0"
+            android:background="@color/paletaBackground"
+            android:enabled="false"
+            android:shadowColor="@color/textColor"
+            android:shadowRadius="2"
+            android:text="Copiar referencia"
+            android:textAllCaps="false"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:onClick="OnCopiarReferencia"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
