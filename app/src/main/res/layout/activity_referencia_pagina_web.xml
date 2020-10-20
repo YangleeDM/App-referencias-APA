@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ReferenciaLibroActivity">
+    tools:context=".ReferenciaPaginaWebActivity">
 
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="189dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
 
-        android:src="@drawable/book">
+        android:src="@drawable/browser">
 
     </ImageView>
+
 
     <TextView
 
@@ -35,106 +36,144 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="332dp"
         android:layout_weight="0"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:textAlignment="center"
-        android:gravity="center_horizontal">
+        android:textAlignment="center">
 
         <EditText
-            android:id="@+id/inputEditorial"
+            android:id="@+id/inputAutoresWeb"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
+            android:drawableTint="@color/textColor"
             android:gravity="center_horizontal"
-            android:textStyle="bold"
+            android:hint="Autor o autores"
+            android:maxLines="1"
             android:outlineSpotShadowColor="@color/placeHolderColor"
             android:textColor="@color/textColor"
-            android:drawableTint="@color/textColor"
-            android:textCursorDrawable="@color/textColor"
-            android:backgroundTint="@color/textColor"
             android:textColorHint="@color/fondoInputFichaGenerada"
-            android:maxLines="1"
-            android:maxLength="30"
-            android:hint="Editorial">
+            android:textCursorDrawable="@color/textColor"
+            android:textSize="15dp"
+            android:textStyle="bold">
+
         </EditText>
 
         <EditText
-            android:id="@+id/inputTitulo"
+            android:id="@+id/inputAnioPublicacionWeb"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
+            android:drawableTint="@color/textColor"
             android:gravity="center_horizontal"
-            android:textStyle="bold"
+            android:hint="Año de publicación"
+            android:maxLines="1"
+            android:outlineSpotShadowColor="@color/placeHolderColor"
+            android:textColorHint="@color/fondoInputFichaGenerada"
+            android:textCursorDrawable="@color/textColor"
+            android:textSize="15dp"
+            android:textStyle="bold">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/inputTituloArticulo"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
+            android:drawableTint="@color/textColor"
+            android:gravity="center_horizontal"
+            android:hint="Título del artículo"
+            android:maxLines="1"
             android:outlineSpotShadowColor="@color/placeHolderColor"
             android:textColor="@color/textColor"
-            android:drawableTint="@color/textColor"
-            android:textCursorDrawable="@color/textColor"
-            android:backgroundTint="@color/textColor"
             android:textColorHint="@color/fondoInputFichaGenerada"
-            android:maxLines="1"
-            android:hint="Título del libro">
-        </EditText>
-
-        <EditText
-            android:id="@+id/inputAutores"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:textColor="@color/textColor"
-            android:drawableTint="@color/textColor"
             android:textCursorDrawable="@color/textColor"
-            android:backgroundTint="@color/textColor"
-            android:textColorHint="@color/fondoInputFichaGenerada"
-            android:maxLines="1"
-            android:hint="Autor o autores">
-        </EditText>
-
-        <EditText
-            android:id="@+id/inputAnioPublicacion"
-            android:numeric="integer"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:textColor="@color/textColor"
-            android:drawableTint="@color/textColor"
-            android:textCursorDrawable="@color/textColor"
-            android:backgroundTint="@color/textColor"
-            android:textColorHint="@color/fondoInputFichaGenerada"
-            android:maxLength="4"
-            android:hint="Año de publicación">
+            android:textSize="15dp"
+            android:textStyle="bold">
 
         </EditText>
 
         <EditText
-            android:id="@+id/inputLugarPublicacion"
+            android:id="@+id/inputFechaRecWeb"
             android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:textColor="@color/textColor"
-            android:drawableTint="@color/textColor"
-            android:textCursorDrawable="@color/textColor"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/textColor"
-            android:textColorHint="@color/fondoInputFichaGenerada"
+            android:drawableTint="@color/textColor"
+            android:gravity="center_horizontal"
+            android:hint="Fecha de recuperación"
             android:maxLines="1"
-            android:hint="Lugar de publicación"
-            android:autofillHints="Hola como estás">
+            android:outlineSpotShadowColor="@color/placeHolderColor"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/fondoInputFichaGenerada"
+            android:textCursorDrawable="@color/textColor"
+            android:textSize="15dp"
+            android:textStyle="bold">
+
         </EditText>
 
+
+        <CheckBox
+            android:id="@+id/checkboxFechaRecu"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/textColor"
+            android:gravity="center"
+            android:text="Hoy"
+            android:textColor="@color/textColor"
+            android:textStyle="bold">
+
+        </CheckBox>
+
+        <EditText
+            android:id="@+id/inputAsociacionWeb"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
+            android:drawableTint="@color/textColor"
+            android:gravity="center_horizontal"
+            android:hint="Asociación que publicó el artículo"
+            android:maxLines="1"
+            android:outlineSpotShadowColor="@color/placeHolderColor"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/fondoInputFichaGenerada"
+            android:textCursorDrawable="@color/textColor"
+            android:textSize="15dp"
+            android:textStyle="bold">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/inputEnlaceWeb"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/textColor"
+            android:drawableTint="@color/textColor"
+            android:gravity="center_horizontal"
+            android:hint="Link/Enlace"
+            android:maxLines="1"
+            android:outlineSpotShadowColor="@color/placeHolderColor"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/fondoInputFichaGenerada"
+            android:textCursorDrawable="@color/textColor"
+            android:textSize="15dp"
+            android:textStyle="bold">
+
+        </EditText>
 
         <Button
             android:id="@+id/btnGenerarLibro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/buttonBackground"
+            android:onClick="OnGenerarRerencia"
+            android:shadowColor="@color/textColor"
+            android:shadowRadius="2"
             android:text="Generar"
             android:textColor="@color/textColor"
             android:textSize="20dp"
-            android:shadowRadius="2"
-            android:shadowColor="@color/textColor"
-            android:background="@color/buttonBackground"
-            android:layout_margin="10dp"
-            android:onClick="OnGenerarRerencia"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -165,10 +204,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text=""
-                android:textSize="20dp"
                 android:textColor="@color/paletaLight"
-                android:gravity="center"
+                android:textSize="20dp"
                 android:textStyle="italic">
+
             </TextView>
 
             <ImageView
@@ -193,8 +232,5 @@
 
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>

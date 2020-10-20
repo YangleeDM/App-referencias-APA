@@ -7,76 +7,58 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_referencia_libro.*
+import kotlinx.android.synthetic.main.activity_referencia_libro.inputReferenciaCreadaLibro
+import kotlinx.android.synthetic.main.activity_referencia_pagina_web.*
 
-class ReferenciaLibroActivity : AppCompatActivity() {
+class ReferenciaPaginaWebActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_referencia_libro)
+        setContentView(R.layout.activity_referencia_pagina_web)
     }
+
 
     fun OnGenerarRerencia(view: View) {
 
         //Validación simple
 
-        if(inputEditorial.text.toString().length == 0){
+        if(inputAnioPublicacionWeb.text.toString().length == 0){
             Toast.makeText(this, "Por favor ingresa la editorial", Toast.LENGTH_LONG).show()
             return
         }
 
-        if(inputTitulo.text.toString().length == 0){
+        if(inputAsociacionWeb.text.toString().length == 0){
             Toast.makeText(this, "Por favor ingresa un título", Toast.LENGTH_LONG).show()
             return
         }
 
-        if(inputAutores.text.toString().length == 0){
+        if(inputAutoresWeb.text.toString().length == 0){
             Toast.makeText(this, "Por favor ingresa autor o autores", Toast.LENGTH_LONG).show()
             return
         }
-        if(inputAnioPublicacion.text.toString().length == 0){
+        if(inputEnlaceWeb.text.toString().length == 0){
             Toast.makeText(this, "Por favor ingresa el año de publicación", Toast.LENGTH_LONG).show()
             return
         }
-        if(inputLugarPublicacion.text.toString().length == 0){
+        if(inputFechaRecWeb.text.toString().length == 0){
+            Toast.makeText(this, "Por favor ingresa el lugar de publicación del libro", Toast.LENGTH_LONG).show()
+            return
+        }
+        if(inputTituloArticulo.text.toString().length == 0){
             Toast.makeText(this, "Por favor ingresa el lugar de publicación del libro", Toast.LENGTH_LONG).show()
             return
         }
 
 
-        // End validación, si validación correcta, se genera la referencia
+        var anioPub = inputAnioPublicacionWeb.text.toString()
+        var ascWeb = inputAsociacionWeb.text.toString()
+        var autWeb = inputAutoresWeb.text.toString()
+        var urlWeb = inputEnlaceWeb.text.toString()
+        var fechaRecuperacionWeb = inputFechaRecWeb.text.toString()
+        var tituloWeb = inputTituloArticulo.text.toString()
 
-
+        // End validación simple
         crearReferencia()
-
-    }
-
-    private fun crearReferencia(){
-
-        val validar = Operaciones()
-
-        if(validar.validateAnio(inputAnioPublicacion.text.toString())){
-
-        }else{
-            Toast.makeText(this, "Año inválido ¿Vienes en el futuro?", Toast.LENGTH_LONG).show()
-            return
-        }
-
-        var referenciaCreada : String = ""
-
-        try {
-
-            referenciaCreada += "${inputAutores.text.toString()}. (${inputAnioPublicacion.text.toString()}). ${inputTitulo.text.toString()}. ${inputLugarPublicacion.text.toString()}. ${inputEditorial.text.toString()}"
-            inputReferenciaCreadaLibro.setText(referenciaCreada)
-
-            Toast.makeText(this, "Referencia creada", Toast.LENGTH_LONG).show()
-            btnCopiarReferenciaLibro.visibility = View.VISIBLE
-
-        }catch (e: Exception){
-            e.printStackTrace()
-            Toast.makeText(this, "Ocurrió un error al crear la referencia", Toast.LENGTH_LONG).show()
-            return
-        }
 
     }
 
@@ -92,4 +74,14 @@ class ReferenciaLibroActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Texto copiado", Toast.LENGTH_LONG).show()
     }
+
+    private fun crearReferencia(){
+
+        val valdidar = Operaciones()
+
+
+
+    }
+
+
 }

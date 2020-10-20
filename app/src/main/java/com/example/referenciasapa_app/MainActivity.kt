@@ -19,7 +19,20 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val btnWeb = findViewById<Button>(R.id.btnReferenciaWeb)
 
+        btnWeb.setOnClickListener {
+            val intent = Intent (this, ReferenciaPaginaWebActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        val btnCapitulLibro = findViewById<Button>(R.id.btnReferenciaCapLibro)
+
+        btnCapitulLibro.setOnClickListener {
+            val intent = Intent(this, ReferenciaCapituloLibroActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
