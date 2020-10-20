@@ -32,6 +32,16 @@ class Operaciones {
         return ""
     }
 
+    fun campoVacio(Str: String): Boolean{
+
+        if(Str.isEmpty() || Str.isBlank()){
+            return false
+        }else{
+            return true
+        }
+
+    }
+
 
 
 

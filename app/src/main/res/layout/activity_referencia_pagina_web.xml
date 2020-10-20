@@ -63,15 +63,19 @@
         <EditText
             android:id="@+id/inputAnioPublicacionWeb"
             android:layout_width="300dp"
+            android:numeric="integer"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/textColor"
             android:drawableTint="@color/textColor"
             android:gravity="center_horizontal"
             android:hint="Año de publicación"
             android:maxLines="1"
+            android:maxLength="4"
             android:outlineSpotShadowColor="@color/placeHolderColor"
             android:textColorHint="@color/fondoInputFichaGenerada"
+            android:textColor="@color/textColor"
             android:textCursorDrawable="@color/textColor"
+            android:foregroundTint="@color/textColor"
             android:textSize="15dp"
             android:textStyle="bold">
 
@@ -109,6 +113,8 @@
             android:textColorHint="@color/fondoInputFichaGenerada"
             android:textCursorDrawable="@color/textColor"
             android:textSize="15dp"
+            android:editable="false"
+            android:onClick="onClickFechaRecuperacion"
             android:textStyle="bold">
 
         </EditText>
@@ -122,6 +128,8 @@
             android:gravity="center"
             android:text="Hoy"
             android:textColor="@color/textColor"
+            android:onClick="onCheckBoxClick"
+
             android:textStyle="bold">
 
         </CheckBox>
@@ -201,26 +209,26 @@
 
             <TextView
                 android:id="@+id/inputReferenciaCreadaLibro"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="339dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
                 android:text=""
                 android:textColor="@color/paletaLight"
-                android:textSize="20dp"
-                android:textStyle="italic">
-
-            </TextView>
+                android:textSize="12dp"
+                android:textStyle="italic"></TextView>
 
             <ImageView
-                android:id="@+id/btnCopiarReferenciaLibro"
-                android:layout_width="25dp"
-                android:layout_height="34dp"
+                android:id="@+id/btnCopiarWeb"
+                android:layout_width="24dp"
+                android:layout_height="29dp"
                 android:layout_gravity="end|bottom"
                 android:layout_margin="10dp"
                 android:layout_marginTop="10dp"
-                android:visibility="invisible"
                 android:onClick="OnCopiarReferencia"
+                android:src="@drawable/coypclipboardimg"
 
-                android:src="@drawable/coypclipboardimg">
+                android:visibility="invisible">
 
             </ImageView>
 
