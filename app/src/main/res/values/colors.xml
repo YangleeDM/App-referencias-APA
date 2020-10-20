@@ -7,5 +7,7 @@
     <color name="paletaDark">#134241</color>
     <color name="paletaLight">#FFFFFF</color>
     <color name="paletaBackground">#C5DBDB</color>
+    <color name="textColor">#2e2654</color>
+
 
 </resources>

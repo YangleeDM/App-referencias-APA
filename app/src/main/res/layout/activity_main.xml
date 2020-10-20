@@ -5,18 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/paletaLight"
+    android:orientation="vertical"
+
 
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/work">
+
+    </ImageView>
+
     <TextView
-        android:id="@+id/tvInput"
-        android:layout_width="match_parent"
-        android:layout_height="347dp"
+
+        android:id="@+id/tvIntruccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
+        android:textStyle="bold"
         android:text="Selecciona el tipo de referencia"
         android:textAlignment="gravity"
-        android:textColor="@color/paletaDark"
+        android:textColor="@color/textColor"
         android:textSize="30dp"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center"
+        >
+
+
+        <Button
+            android:id="@+id/btnReferenciaLibro"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="De un libro"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:shadowRadius="2"
+            android:shadowColor="@color/textColor"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnReferenciaWeb"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="De una página web"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:shadowRadius="2"
+            android:shadowColor="@color/textColor"
+            />
+        <Button
+            android:id="@+id/btnReferenciaCapLibro"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Capítulo de un libro"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:shadowRadius="2"
+            android:shadowColor="@color/textColor"
+            />
+    </LinearLayout>
 
 </LinearLayout>
