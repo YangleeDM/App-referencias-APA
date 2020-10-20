@@ -47,7 +47,7 @@ class ReferenciaLibroActivity : AppCompatActivity() {
         var referenciaCreada : String = ""
 
         try {
-            referenciaCreada += "${inputAutores.text.toString()}. (${inputAnioPublicacion.text.toString()}). ${inputTitulo.text.toString()}. Lugar: ${inputLugarPublicacion.text.toString()}. ${inputEditorial.text.toString()}"
+            referenciaCreada += "${inputAutores.text.toString()}. (${inputAnioPublicacion.text.toString()}). ${inputTitulo.text.toString()}. ${inputLugarPublicacion.text.toString()}. ${inputEditorial.text.toString()}"
             inputReferenciaCreadaLibro.setText(referenciaCreada)
         }catch (e: Exception){
             e.printStackTrace()
